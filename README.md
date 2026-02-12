@@ -2,14 +2,14 @@
 
 **BITS Pilani M.Tech (AIML/DSE) - Machine Learning Assignment 2**
 
+
 **Student Name:** SAIRAM GAJABINKAR
+
 **Student ID:** 2025AA05138
-**Course:** Machine Learning
-**Submission Date:** February 2026
 
 ---
 
-## 📋 Problem Statement
+## 📋 Summary
 
 Heart disease remains one of the leading causes of mortality worldwide. Early and accurate detection of heart disease is crucial for effective treatment and improved patient outcomes. This project aims to develop a robust machine learning-based classification system that can predict the presence of heart disease in patients based on various clinical and diagnostic features.
 
@@ -286,7 +286,6 @@ The app will be live within a few minutes with a public URL.
 **Program:** M.Tech in Artificial Intelligence and Machine Learning (AIML)
 **Course:** Machine Learning
 **Assignment:** Assignment 2 - Multi-Model Classification with Deployment
-**Instructor:** [Course Instructor Name]
 **Academic Year:** 2025-2026
 
 ---
@@ -294,7 +293,7 @@ The app will be live within a few minutes with a public URL.
 ## 📧 Contact
 
 **Student:** SAIRAM GAJABINKAR
-**Email:** [Your BITS Email]
+**Email:** 2025aa05138@wilp.bits-pilani.ac.in
 **Student ID:** 2025AA05138
 
 ---
