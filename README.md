@@ -9,7 +9,7 @@
 
 ---
 
-## 📋 Summary
+## 📋 Problem statement
 
 Heart disease remains one of the leading causes of mortality worldwide. Early and accurate detection of heart disease is crucial for effective treatment and improved patient outcomes. This project aims to develop a robust machine learning-based classification system that can predict the presence of heart disease in patients based on various clinical and diagnostic features.
 
@@ -136,7 +136,7 @@ An interactive web application was developed using Streamlit to demonstrate the 
 4. **📈 Confusion Matrix:** Visual representation of model performance with detailed classification report
 
 ### **Application URL:**
-- **Live App:** https://heart-disease-classification-ml.streamlit.app
+- **Live App:** https://2025aa05138.streamlit.app
 - **GitHub Repository:** https://github.com/2025AA05138/heart-disease-classification-ml
 
 ### **Running Locally:**
@@ -338,6 +338,16 @@ The app will be live within a few minutes with a public URL.
 
 ---
 
+## 📚 References
+
+1. Heart Disease Dataset - Kaggle: https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset
+2. UCI Machine Learning Repository - Heart Disease Database
+3. Scikit-learn Documentation: https://scikit-learn.org/
+4. XGBoost Documentation: https://xgboost.readthedocs.io/
+5. Streamlit Documentation: https://docs.streamlit.io/
+
+---
+
 ## 📧 Contact
 
 **Student:** SAIRAM GAJABINKAR
@@ -349,17 +359,3 @@ The app will be live within a few minutes with a public URL.
 ## 📄 License
 
 This project is submitted as part of academic coursework for BITS Pilani M.Tech (AIML/DSE) program.
-
----
-
-## 🙏 Acknowledgments
-
-- UCI Machine Learning Repository for the heart disease dataset
-- BITS Pilani for providing the virtual lab environment
-- Streamlit for the excellent web application framework
-- Course instructors and teaching assistants for guidance
-
----
-
-**Last Updated:** February 2026
-**Status:** ✅ Completed and Deployed

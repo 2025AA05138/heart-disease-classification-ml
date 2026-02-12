@@ -270,14 +270,66 @@ if uploaded_file is not None:
                     report_df = pd.DataFrame(report).transpose()
                     st.dataframe(report_df.style.highlight_max(axis=0))
 
+                st.divider()
+
+                # Feature 5: Download Predictions Report
+                st.header("📥 Download Predictions Report")
+
+                # Create detailed predictions DataFrame
+                predictions_report_df = X_test.copy()
+                predictions_report_df['Actual'] = ['Disease' if val == 1 else 'No Disease' for val in y_test]
+                predictions_report_df['Predicted'] = ['Disease' if val == 1 else 'No Disease' for val in y_pred]
+                predictions_report_df['Correct'] = ['✓' if actual == pred else '✗'
+                                                     for actual, pred in zip(y_test, y_pred)]
+
+                # Add probability scores if available
+                if y_pred_proba is not None:
+                    if len(y_pred_proba.shape) > 1 and y_pred_proba.shape[1] == 2:
+                        predictions_report_df['Probability_No_Disease'] = y_pred_proba[:, 0]
+                        predictions_report_df['Probability_Disease'] = y_pred_proba[:, 1]
+                    else:
+                        predictions_report_df['Probability_Disease'] = y_pred_proba
+
+                # Show preview
+                st.subheader("Preview of Predictions Report")
+                st.dataframe(predictions_report_df.head(10))
+
+                # Download button for predictions
+                csv_predictions = predictions_report_df.to_csv(index=False)
+                st.download_button(
+                    label="📥 Download Full Predictions Report (CSV)",
+                    data=csv_predictions,
+                    file_name=f"predictions_report_{selected_model.replace(' ', '_').lower()}.csv",
+                    mime="text/csv",
+                    help="Download complete predictions with actual vs predicted values"
+                )
+
+                # Download button for classification report
+                csv_classification = report_df.to_csv()
+                st.download_button(
+                    label="📥 Download Classification Report (CSV)",
+                    data=csv_classification,
+                    file_name=f"classification_report_{selected_model.replace(' ', '_').lower()}.csv",
+                    mime="text/csv",
+                    help="Download classification metrics report"
+                )
+
             else:
                 st.header("🔮 Predictions")
                 st.write(f"Predictions made using **{selected_model}**")
 
-                predictions_df = pd.DataFrame({
-                    'Sample': range(1, len(y_pred) + 1),
-                    'Prediction': ['Disease' if p == 1 else 'No Disease' for p in y_pred]
-                })
+                # Create predictions DataFrame with features
+                predictions_df = X_test.copy()
+                predictions_df['Prediction'] = ['Disease' if p == 1 else 'No Disease' for p in y_pred]
+                predictions_df['Prediction_Code'] = y_pred
+
+                # Add probability scores if available
+                if y_pred_proba is not None:
+                    if len(y_pred_proba.shape) > 1 and y_pred_proba.shape[1] == 2:
+                        predictions_df['Probability_No_Disease'] = y_pred_proba[:, 0]
+                        predictions_df['Probability_Disease'] = y_pred_proba[:, 1]
+                    else:
+                        predictions_df['Probability_Disease'] = y_pred_proba
 
                 st.dataframe(predictions_df)
 
@@ -290,6 +342,19 @@ if uploaded_file is not None:
                     st.metric("Predicted Disease", disease_count)
                 with col2:
                     st.metric("Predicted No Disease", no_disease_count)
+
+                st.divider()
+
+                # Download predictions
+                st.subheader("📥 Download Predictions")
+                csv_data = predictions_df.to_csv(index=False)
+                st.download_button(
+                    label="📥 Download Predictions Report (CSV)",
+                    data=csv_data,
+                    file_name=f"predictions_{selected_model.replace(' ', '_').lower()}.csv",
+                    mime="text/csv",
+                    help="Download predictions with all features and probability scores"
+                )
 
         else:
             st.error("Failed to load model. Please check if model files exist in the model/ directory.")
