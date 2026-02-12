@@ -57,14 +57,6 @@ st.markdown("""
 # Title and description
 st.markdown('<h1 class="main-header">❤️ Heart Disease Classification</h1>', unsafe_allow_html=True)
 st.markdown('<p class="sub-header">Multi-Model ML Classifier with Interactive Evaluation</p>', unsafe_allow_html=True)
-st.markdown('<p class="sub-header">BITS Pilani M.Tech (AIML) - Machine Learning Assignment-2</p>', unsafe_allow_html=True)
-
-st.markdown("""
-**Name: SAIRAM GAJABINKAR**\n
-**ID: 2025AA05138**
-""")
-
-st.divider()
 
 # Model information
 MODEL_INFO = {
