@@ -128,16 +128,16 @@ All models were trained on the same training set and evaluated on the same test 
 
 An interactive web application was developed using Streamlit to demonstrate the trained models and provide real-time predictions.
 
+### **Application URL:**
+- **Live App:** https://2025aa05138.streamlit.app
+- **GitHub Repository:** https://github.com/2025AA05138/heart-disease-classification-ml
+
 ### **Application Features:**
 
 1. **📤 CSV Upload:** Users can upload test data in CSV format for batch predictions
 2. **🔧 Model Selection:** Dropdown menu to select from all 6 trained models
 3. **📊 Metrics Display:** Real-time display of all evaluation metrics for the selected model
 4. **📈 Confusion Matrix:** Visual representation of model performance with detailed classification report
-
-### **Application URL:**
-- **Live App:** https://2025aa05138.streamlit.app
-- **GitHub Repository:** https://github.com/2025AA05138/heart-disease-classification-ml
 
 ### **Running Locally:**
 ```bash
@@ -219,23 +219,6 @@ The application will open in your default web browser at `http://localhost:8501`
 
 ---
 
-## 🌐 Deployment
-
-The application is deployed on **Streamlit Community Cloud** for free hosting and easy access.
-
-### **Deployment Steps:**
-1. Push code to GitHub repository
-2. Go to [Streamlit Cloud](https://streamlit.io/cloud)
-3. Sign in with GitHub
-4. Click "New App"
-5. Select repository: `heart-disease-classification-ml`
-6. Set main file: `app.py`
-7. Click "Deploy"
-
-The app will be live within a few minutes with a public URL.
-
----
-
 ## 📊 Usage Example
 
 1. **Access the Application:** Open the deployed Streamlit app URL
@@ -299,43 +282,6 @@ The app will be live within a few minutes with a public URL.
 | **Overfitting Risk** | Low | High | Medium | Low | Very Low | Very Low |
 | **Memory Usage** | Low | Low | High | Low | High | High |
 
-**Key Trade-offs:**
-- **Simplicity vs Performance:** Simple models (LR, NB) are interpretable but less accurate
-- **Speed vs Accuracy:** kNN is slow but reasonably accurate; ensembles balance both
-- **Interpretability vs Power:** Ensemble methods sacrifice interpretability for superior performance
-- **Resource Usage:** Complex models require more memory and computational resources
-
-### **4. Recommendations for Deployment**
-
-**For Production Healthcare Systems:**
-- **Primary Choice:** XGBoost or Random Forest for maximum accuracy and reliability
-- **Fallback:** Decision Tree for high performance with better interpretability
-- **Real-time Applications:** Logistic Regression or Naive Bayes for fast inference
-
-**Deployment Strategy:**
-1. **Critical Care:** Use XGBoost/Random Forest for highest accuracy (0 tolerance for errors)
-2. **Screening Tool:** Decision Tree provides excellent balance of accuracy and interpretability
-3. **Mobile Apps:** Logistic Regression for lightweight deployment with acceptable accuracy
-4. **Ensemble Approach:** Combine multiple models for voting-based predictions
-
-**Model Selection Criteria:**
-- If **interpretability is critical** → Decision Tree or Logistic Regression
-- If **accuracy is paramount** → XGBoost or Random Forest
-- If **speed matters most** → Naive Bayes or Logistic Regression
-- If **balanced performance needed** → Decision Tree or kNN
-
-**Final Recommendation:** Deploy **Random Forest or XGBoost** as the primary model with Decision Tree as an interpretable backup for cases requiring medical explanation.
-
----
-
-## 🎓 Academic Information
-
-**Institution:** Birla Institute of Technology and Science (BITS Pilani)
-**Program:** M.Tech in Artificial Intelligence and Machine Learning (AIML)
-**Course:** Machine Learning
-**Assignment:** Assignment 2 - Multi-Model Classification with Deployment
-**Academic Year:** 2025-2026
-
 ---
 
 ## 📚 References
@@ -348,10 +294,26 @@ The app will be live within a few minutes with a public URL.
 
 ---
 
+## 🎓 Academic Information
+
+**Institution:** Birla Institute of Technology and Science (BITS Pilani)
+
+**Program:** M.Tech in Artificial Intelligence and Machine Learning (AIML)
+
+**Course:** Machine Learning
+
+**Assignment:** Assignment 2 - Multi-Model Classification with Deployment
+
+**Academic Year:** 2025-2026
+
+---
+
 ## 📧 Contact
 
 **Student:** SAIRAM GAJABINKAR
+
 **Email:** 2025aa05138@wilp.bits-pilani.ac.in
+
 **Student ID:** 2025AA05138
 
 ---
