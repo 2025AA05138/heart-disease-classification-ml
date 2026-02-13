@@ -127,29 +127,32 @@ st.markdown("""
         border: 1px solid rgba(255, 255, 255, 0.3) !important;
     }
 
-    /* Model selectbox styling */
-    div.stSelectbox {
+    /* Model selectbox styling - only for main content, not settings */
+    div.stSelectbox:not(dialog div.stSelectbox):not([role="dialog"] div.stSelectbox) {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-        padding: 0 2rem 0.5rem 2rem !important;
+        padding: 0 2rem 2rem 2rem !important;
         margin: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
     }
-    div.stSelectbox label {
+    div.stSelectbox:not(dialog div.stSelectbox):not([role="dialog"] div.stSelectbox) label {
         color: white !important;
         font-size: 1rem !important;
     }
-    div.stSelectbox > div {
-        background-color: rgba(255, 255, 255, 0.15) !important;
+    div.stSelectbox:not(dialog div.stSelectbox):not([role="dialog"] div.stSelectbox) > div {
+        background-color: rgba(45, 55, 72, 0.9) !important;
+        border-radius: 8px !important;
     }
-    div.stSelectbox input {
+    div.stSelectbox:not(dialog div.stSelectbox):not([role="dialog"] div.stSelectbox) input {
         color: white !important;
     }
 
     /* Model description */
     .model-description {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 1rem 2rem 2rem 2rem;
+        padding: 0.5rem 2rem 2rem 2rem;
         border-radius: 0 0 12px 12px;
-        margin: 0 0 1rem 0;
+        margin: -2rem 0 1rem 0;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     .model-description p {
