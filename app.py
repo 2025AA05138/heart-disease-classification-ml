@@ -269,6 +269,37 @@ st.markdown("""
         border-radius: 8px;
         font-weight: bold;
     }
+
+    /* Fixed footer */
+    .fixed-footer {
+        position: fixed;
+        bottom: 0;
+        left: 21rem;
+        right: 0;
+        text-align: center;
+        color: #666;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 998;
+        transition: left 0.3s ease;
+    }
+
+    /* Adjust footer position when sidebar is collapsed */
+    [data-testid="stSidebar"][aria-expanded="false"] ~ .main .fixed-footer,
+    [data-testid="collapsedControl"] ~ .main .fixed-footer {
+        left: 0;
+    }
+
+    [data-theme="dark"] .fixed-footer {
+        background: rgba(38, 39, 48, 0.95);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .fixed-footer p {
+        margin: 0.3rem 0;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -857,10 +888,9 @@ else:
     st.markdown('<div class="info-box">👆 <strong>Get Started:</strong> Upload a CSV file above to begin predictions and model evaluation.</div>', unsafe_allow_html=True)
 
 # Footer
-st.divider()
 st.markdown("""
-<div style='text-align: center; color: #666; padding: 2rem; border-radius: 10px;'>
-    <p style='margin: 0.3rem 0;'>BITS Pilani M.Tech (AIML/DSE) - Machine Learning - Assignment 2</p>
-    <p style='margin: 0.3rem 0;'>© 2026 | SAIRAM GAJABINKAR (2025AA05138)</p>
+<div class='fixed-footer'>
+    <p>BITS Pilani M.Tech (AIML/DSE) - Machine Learning - Assignment 2</p>
+    <p>© 2026 | SAIRAM GAJABINKAR (2025AA05138)</p>
 </div>
 """, unsafe_allow_html=True)
