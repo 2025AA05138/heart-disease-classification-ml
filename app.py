@@ -474,7 +474,7 @@ with st.sidebar:
     st.divider()
 
     st.markdown("### 📊 Expected CSV Features")
-    st.markdown("Your uploaded file should contain these 13 features:")
+    st.markdown("Your uploaded file should contain these 14 features:")
 
     features_info = {
         "age": "Age in years",
@@ -489,7 +489,8 @@ with st.sidebar:
         "oldpeak": "ST depression",
         "slope": "Slope of peak exercise",
         "ca": "Major vessels (0-3)",
-        "thal": "Thalassemia (0-3)"
+        "thal": "Thalassemia (0-3)",
+        "target": "Diagnosis (0=No Disease, 1=Disease)"
     }
 
     with st.expander("📝 View Feature Details"):
